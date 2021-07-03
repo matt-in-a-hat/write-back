@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+            }
+            textarea {
+                flex: 1;
+                margin: 10px;
+                border: none;
+                border-right: solid 1px #999;
+            }
+            pre {
+                flex: 1;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id="input"></textarea>
+        <pre id="output"></pre>
+
+        <script>
+            var output = document.getElementById('output')
+            var input = document.getElementById('input')
+            input.addEventListener('keyup', function () {
+                output.innerText = input.value.replace(/(\s)/g, '≈$1≈').split('≈').reverse().join('')
+            })
+        </script>
+    </body>
+</html>
